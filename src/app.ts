@@ -1,11 +1,12 @@
-import express, { Request, Response , NextFunction} from "express";
+import express from "express";
+import type { Request, Response, NextFunction } from "express";
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
-app.use("./", (req: Request, res: Response, next: NextFunction) => {
-    res.send("Hello, World!")
+app.use("/", (req: Request, res: Response, next: NextFunction) => {
+    res.send("Hello, World!");
 });
 
 export default app;
